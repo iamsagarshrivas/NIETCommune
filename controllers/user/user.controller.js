@@ -1,3 +1,5 @@
+var user = require('../')
+
 module.exports = {
     getAllUser:(req,res)=>{
         res.json("user working");
@@ -7,6 +9,6 @@ module.exports = {
     },
     authenticateUser:(req,res)=>{
         console.log('req ',req.body)
-        res.json('login working');
+        
     }
 }
