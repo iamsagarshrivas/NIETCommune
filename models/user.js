@@ -9,19 +9,23 @@ const userSchema = mongoose.Schema({
     },
     role : {
         type : String,
-        enum : ['candidate','faculty','admin','staff'],
-        default : 'candidate'
+        enum : ['student','faculty','admin','staff'],
+        default : 'student'
     
     },
     name : String,
+    mobileNumber : Number,
     password:{
         type : String,
         require : true
     },
-    socialLogin:Boolean,
-    provider:String,
+    erpId:{        
+        type: String,
+        lowercase : true,
+        unique : true,
+        required : true
+    },
     lastLoginTime: Date,
-    loginCount: Number,
     isActive : Boolean,
     otpVerified:Boolean,
     status: String
