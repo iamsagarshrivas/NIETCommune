@@ -1,4 +1,4 @@
-var user = require('../')
+var user = require('../../models/user');
 
 module.exports = {
     getAllUser:(req,res)=>{
@@ -8,7 +8,10 @@ module.exports = {
         res.send("another user")
     },
     authenticateUser:(req,res)=>{
-        console.log('req ',req.body)
+        console.log('req ',req.body);
+        user.find({},(err,result)=>{
+            res.json({err,result});
+        })
         
     }
 }
