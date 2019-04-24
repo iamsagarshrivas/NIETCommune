@@ -4,5 +4,9 @@ module.exports = {
     },
     getAnotherUser:(req,res)=>{
         res.send("another user")
+    },
+    authenticateUser:(req,res)=>{
+        console.log('req ',req.body)
+        res.json('login working');
     }
 }
