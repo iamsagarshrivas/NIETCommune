@@ -9,7 +9,7 @@ module.exports = {
     },
     authenticateUser: (req, res) => {
         console.log('req ', req.body);
-        user.findOne({email:req.body.email},{_id:1,role:1},(err,userFound)=>{
+        user.findOne({email:req.body.email},(err,userFound)=>{
             if(err){
                 res.json({error : true, error_msg : 'something went wrong',err})
             }else{
