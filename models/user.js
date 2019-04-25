@@ -9,8 +9,9 @@ const userSchema = mongoose.Schema({
     },
     role : {
         type : String,
-        enum : ['student','faculty','admin','staff'],
-        default : 'student'
+        enum : ['student','faculty','admin','staff','other'],
+        default : 'student',
+        lowercase:true
     
     },
     name : String,
