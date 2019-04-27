@@ -4,17 +4,29 @@ var studentSchema = mongoose.Schema({
 
     name:String,
     email:String,
-    course:String,
-    branch:String,
+    course:{
+        type:String,
+        lowercase:true
+    },
+    branch:{
+        type:String,
+        lowercase:true
+    },
     year:Number,
-    section:String,
+    section:{
+        type:String,
+        lowercase:true
+    },
     semester:Number,
     erpId:{
         type:String,
         lowercase:true
     },
     user_id:mongoose.Schema.Types.ObjectId,
-    rollNumber:Number,
+    rollNumber:{
+        type:Number,
+        unique : true
+    },
     mobileNumber:Number,
     status:String,
 
