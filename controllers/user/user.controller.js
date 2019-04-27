@@ -56,33 +56,57 @@ module.exports = {
                     let newStudent = new student({
 
                         name: userSaved.name,
+                        email : userSaved.email,
                         erpId: userSaved.erpId,
                         user_id: userSaved._id,
                         mobileNumber: userSaved.mobileNumber,
-                        status: 'inactive' ,
+                        status: 'inactive',
 
                     });
 
-                    newStudent.save((err,studentData)=>{
-                        if(err){
-                            res.json({error : true, error_msg : 'Something went wrong',err})
+                    newStudent.save((err, studentData) => {
+                        if (err) {
+                            res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
-                        else{
-                            res.json({error:false,''})
+                        else {
+                            res.json({ error: false, msg: 'student added', user: userSaved, student: studentData })
                         }
                     })
 
                 }
                 else if (userSaved.role == 'faculty') {
 
+                    let newFaculty = new faculty({
+
+
+                        name: userSaved.name,
+                        email:userSaved.email,
+                        erpId: userSaved.erpId,
+                        user_id: userSaved._id,
+                        mobileNumber: userSaved.mobileNumber,
+                        status: 'inactive',
+
+                    })
+
+                    newFaculty.save((err, facultyData) => {
+                        if (err) {
+                            res.json({ error: true, error_msg: 'Something went wrong', err })
+                        }
+                        else {
+                            res.json({ error: false, msg: 'faculty added', user: userSaved, faculty: facultyData })
+                        }
+                    })
+
                 }
                 else if (userSaved.role == 'others') {
 
+                    res.json("other saved")
+
                 }
                 else {
-                    res.json({ error: true, error_msg: 'something went wrong' })
+                    // res.json({ error: true, error_msg: 'something went wrong' })
+                    res.json({ error: false, msg: 'user created', user: userSaved })
                 }
-                res.json({ error: false, msg: 'user created', user: userSaved })
             }
         })
     }
