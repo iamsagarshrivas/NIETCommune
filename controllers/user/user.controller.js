@@ -45,108 +45,113 @@ module.exports = {
             }
         })
     },
+
+    // creating user
     registerUser: (req, res) => {
-        console.log('form data', req.body);
         let newUser = new user({
             email: req.body.email,
-            role: req.body.role,
             name: req.body.name,
+            role: null,
             mobileNumber: null,
             password: req.body.password,
             erpId: req.body.erpId,
             lastLoginTime: Date.now(),
             isActive: true,
-            status: "active"
+            status: "inactive"
         })
 
         newUser.save((err, userSaved) => {
             if (err) {
                 if (err.name == 'MongoError' && err.code == 11000) {
-                    res.json({ error: true, error_msg: 'email or erp already exists', err })
+                    res.status(500).json({ error: true, error_msg: 'email or erp already exists', err })
                 }
                 else {
-                    res.json({ error: true, error_msg: 'something went wrong', err })
+                    res.status(500).json({ error: true, error_msg: 'something went wrong', err })
                 }
             }
             else {
-                if (userSaved.role == 'student') {
+                res.status(200).json({ error: false, user: userSaved })
+            }
+        })
+    },
 
+    updateUser: (req, res) => {
+
+        console.log('1',req.body);
+        
+
+        user.findByIdAndUpdate({_id:req.body.id}, { role: req.body.role, status: 'active' }, (err, userUpdated) => {
+            if (err) {
+                console.log('2',err);
+                
+                user.findByIdAndUpdate(req.body.id, { role: null, status: 'inactive' });
+                res.json({ error: true, error_msg: 'Something went wrong', err })
+            }
+            else {
+                console.log('3',userUpdated);
+                
+
+                if (userUpdated.role == 'student') {
                     let newStudent = new student({
 
-                        name: userSaved.name,
-                        email: userSaved.email,
-                        erpId: userSaved.erpId,
-                        user_id: userSaved._id,
-                        mobileNumber: userSaved.mobileNumber,
-                        status: 'inactive',
-                        rollNumber:req.body.rollNumber
+                        name: userUpdated.name,
+                        email: userUpdated.email,
+                        erpId: userUpdated.erpId,
+                        user_id: userUpdated._id,
+                        mobileNumber: userUpdated.mobileNumber,
+                        course: req.body.course,
+                        department: req.body.department,
+                        year: req.body.year,
+                        semester: req.body.semester,
+                        section: req.body.section,
+                        rollNumber: req.body.rollNumber,
 
                     });
 
                     newStudent.save((err, studentData) => {
                         if (err) {
-                            user.findByIdAndDelete(userSaved._id,(err,del)=>{
-                                if(err){
-
-                                    res.json({ error: true, error_msg: 'Something went wrong', err })
-                                }else{
-                                    res.json({
-                                        error:true,error_msg:'Something went wrong',delete:'user deleted',del
-                                    })
-                                }
-                            })
+                            console.log('4',err);
+                            
+                            user.findByIdAndUpdate(req.body.id, { role: null, status: 'inactive' });
+                            res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
                         else {
-                            res.json({ error: false, msg: 'student added', user: userSaved, student: studentData })
+                            console.log('5',studentData);
+                            
+                            res.status(200).json({ error: false, msg: 'User details updated', student: studentData })
                         }
                     })
-
                 }
-                else if (userSaved.role == 'faculty') {
-
+                else if (userUpdated.role == 'faculty') {
                     let newFaculty = new faculty({
 
-
-                        name: userSaved.name,
-                        email: userSaved.email,
-                        erpId: userSaved.erpId,
-                        user_id: userSaved._id,
-                        mobileNumber: userSaved.mobileNumber,
-                        status: 'inactive',
+                        name: userUpdated.name,
+                        email: userUpdated.email,
+                        erpId: userUpdated.erpId,
+                        user_id: userUpdated._id,
+                        mobileNumber: userUpdated.mobileNumber,
+                        department: req.body.department,
 
                     })
 
-                    newFaculty.save((err, facultyData) => {
+                    newFaculty.save((err,facultyData)=>{
                         if (err) {
-                            {
-                                user.findByIdAndDelete(userSaved._id,(err,del)=>{
-                                    if(err){
-    
-                                        res.json({ error: true, error_msg: 'Something went wrong', err })
-                                    }else{
-                                        res.json({
-                                            error:true,error_msg:'Something went wrong',delete:'user deleted',del
-                                        })
-                                    }
-                                })
-                            }
+                            console.log('6',err);
+                            
+                            user.findByIdAndUpdate(req.id, { role: null, status: 'inactive' });
+                            res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
                         else {
-                            res.json({ error: false, msg: 'faculty added', user: userSaved, faculty: facultyData })
+                            console.log('7',facultyData);
+                            
+                            res.status(200).json({ error: false, msg: 'User details updated', faculty: facultyData })
                         }
                     })
-
                 }
-                else if (userSaved.role == 'others') {
 
-                    res.json("other saved")
 
-                }
-                else {
-                    // res.json({ error: true, error_msg: 'something went wrong' })
-                    res.json({ error: false, msg: 'user created', user: userSaved })
-                }
             }
         })
+
     }
 }
