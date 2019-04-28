@@ -14,9 +14,9 @@ div.page-centre{
     border: 1px solid transparent;
     border-radius: 10px;
     
-    -webkit-box-shadow: 4px 4px 26px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 4px 4px 26px 0px rgba(0,0,0,0.75);
-box-shadow: 4px 4px 26px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 31px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 31px -13px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 31px -13px rgba(0,0,0,0.75);
 }
 
 div.page-centre div{

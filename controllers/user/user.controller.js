@@ -10,18 +10,24 @@ module.exports = {
         res.send("another user")
     },
     authenticateUser: (req, res) => {
-        console.log('req ', req.body);
         user.findOne({ email: req.body.email }, (err, userFound) => {
             if (err) {
-                res.json({ error: true, error_msg: 'something went wrong', err })
+                res.status(409).json({ error: true, error_msg: 'something went wrong', err })
             } else {
                 if (!userFound) {
-                    res.json({ error: true, error_msg: 'No user exists with this email' })
+                    res.status(200).json({ error: true, error_msg: 'No user exists with this email' })
                 } else {
                     if (userFound.password != req.body.password) {
                         res.json({ error: true, error_msg: 'Incorrect password, Please try again' })
                     } else {
-                        res.json({ error: false, msg: 'Login Success', userFound })
+                        student.findOne({user_id:userFound._id},(err,studentFound)=>{
+                            if(err){
+                                res.status(409).json({ error: true, error_msg: 'something went wrong', err })                
+                                
+                            }else{
+                                res.status(200).json({ error: false, msg: 'Login Success',user: userFound, student:studentFound });
+                            }
+                        })
                     }
                 }
             }
