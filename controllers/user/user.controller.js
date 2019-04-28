@@ -20,14 +20,26 @@ module.exports = {
                     if (userFound.password != req.body.password) {
                         res.json({ error: true, error_msg: 'Incorrect password, Please try again' })
                     } else {
-                        student.findOne({user_id:userFound._id},(err,studentFound)=>{
-                            if(err){
-                                res.status(409).json({ error: true, error_msg: 'something went wrong', err })                
-                                
-                            }else{
-                                res.status(200).json({ error: false, msg: 'Login Success',user: userFound, student:studentFound });
-                            }
-                        })
+                        if (userFound.role == 'student') {
+                            student.findOne({ user_id: userFound._id }, (err, studentFound) => {
+                                if (err) {
+                                    res.status(409).json({ error: true, error_msg: 'something went wrong', err })
+
+                                } else {
+                                    res.status(200).json({ error: false, msg: 'Login Success', user: userFound, student: studentFound });
+                                }
+                            })
+                        }
+                        else if (userFound.role == 'faculty') {
+                            faculty.findOne({ user_id: userFound._id }, (err, facultyFound) => {
+                                if (err) {
+                                    res.status(409).json({ error: true, error_msg: 'something went wrong', err })
+
+                                } else {
+                                    res.status(200).json({ error: false, msg: 'Login Success', user: userFound, faculty: facultyFound });
+                                }
+                            })
+                        }
                     }
                 }
             }
@@ -62,7 +74,7 @@ module.exports = {
                     let newStudent = new student({
 
                         name: userSaved.name,
-                        email : userSaved.email,
+                        email: userSaved.email,
                         erpId: userSaved.erpId,
                         user_id: userSaved._id,
                         mobileNumber: userSaved.mobileNumber,
@@ -86,7 +98,7 @@ module.exports = {
 
 
                         name: userSaved.name,
-                        email:userSaved.email,
+                        email: userSaved.email,
                         erpId: userSaved.erpId,
                         user_id: userSaved._id,
                         mobileNumber: userSaved.mobileNumber,
