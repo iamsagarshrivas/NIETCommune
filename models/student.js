@@ -12,7 +12,11 @@ var studentSchema = mongoose.Schema({
         type:String,
         lowercase:true
     },
-    year:Number,
+    year:{
+        type:Number,
+        min:1,
+        max:4
+    },
     section:{
         type:String,
         lowercase:true

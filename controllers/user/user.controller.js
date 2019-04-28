@@ -4,7 +4,10 @@ var faculty = require('../../models/faculty');
 
 module.exports = {
     getAllUser: (req, res) => {
-        res.json("user working");
+        user.find({},(err,userIdArr)=>{
+            if(err) throw err;
+            res.json({ar:userIdArr});
+        })
     },
     getAnotherUser: (req, res) => {
         res.send("another user")
@@ -26,7 +29,7 @@ module.exports = {
                                     res.status(409).json({ error: true, error_msg: 'something went wrong', err })
 
                                 } else {
-                                    res.status(200).json({ error: false, msg: 'Login Success', user: userFound, student: studentFound });
+                                    res.status(200).json({ error: false, msg: 'Login Success', student: studentFound });
                                 }
                             })
                         }
@@ -36,7 +39,7 @@ module.exports = {
                                     res.status(409).json({ error: true, error_msg: 'something went wrong', err })
 
                                 } else {
-                                    res.status(200).json({ error: false, msg: 'Login Success', user: userFound, faculty: facultyFound });
+                                    res.status(200).json({ error: false, msg: 'Login Success', faculty: facultyFound });
                                 }
                             })
                         }
@@ -46,7 +49,6 @@ module.exports = {
         })
     },
 
-    // creating user
     registerUser: (req, res) => {
         let newUser = new user({
             email: req.body.email,
@@ -63,14 +65,14 @@ module.exports = {
         newUser.save((err, userSaved) => {
             if (err) {
                 if (err.name == 'MongoError' && err.code == 11000) {
-                    res.status(500).json({ error: true, error_msg: 'email or erp already exists', err })
+                    res.status(500).json({ error: true, error_msg: 'Email or ERP already exists', err })
                 }
                 else {
                     res.status(500).json({ error: true, error_msg: 'something went wrong', err })
                 }
             }
             else {
-                res.status(200).json({ error: false, user: userSaved })
+                res.status(200).json({ error: false, msg:'Profile created' ,user: userSaved })
             }
         })
     },
@@ -118,7 +120,7 @@ module.exports = {
                         else {
                             console.log('5',studentData);
                             
-                            res.status(200).json({ error: false, msg: 'User details updated', student: studentData })
+                            res.status(200).json({ error: false, msg: 'Profile updated', student: studentData })
                         }
                     })
                 }
@@ -144,7 +146,7 @@ module.exports = {
                         else {
                             console.log('7',facultyData);
                             
-                            res.status(200).json({ error: false, msg: 'User details updated', faculty: facultyData })
+                            res.status(200).json({ error: false, msg: 'Profile updated', faculty: facultyData })
                         }
                     })
                 }
