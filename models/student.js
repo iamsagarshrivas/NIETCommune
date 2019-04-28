@@ -25,7 +25,7 @@ var studentSchema = mongoose.Schema({
     user_id:mongoose.Schema.Types.ObjectId,
     rollNumber:{
         type:Number,
-        unique : true
+        // unique : true
     },
     mobileNumber:Number,
     status:String,

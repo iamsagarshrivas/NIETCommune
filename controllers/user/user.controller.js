@@ -50,7 +50,7 @@ module.exports = {
         let newUser = new user({
             email: req.body.email,
             role: req.body.role,
-            name: req.body.userName,
+            name: req.body.name,
             mobileNumber: null,
             password: req.body.password,
             erpId: req.body.erpId,
@@ -79,12 +79,22 @@ module.exports = {
                         user_id: userSaved._id,
                         mobileNumber: userSaved.mobileNumber,
                         status: 'inactive',
+                        rollNumber:req.body.rollNumber
 
                     });
 
                     newStudent.save((err, studentData) => {
                         if (err) {
-                            res.json({ error: true, error_msg: 'Something went wrong', err })
+                            user.findByIdAndDelete(userSaved._id,(err,del)=>{
+                                if(err){
+
+                                    res.json({ error: true, error_msg: 'Something went wrong', err })
+                                }else{
+                                    res.json({
+                                        error:true,error_msg:'Something went wrong',delete:'user deleted',del
+                                    })
+                                }
+                            })
                         }
                         else {
                             res.json({ error: false, msg: 'student added', user: userSaved, student: studentData })
@@ -108,7 +118,18 @@ module.exports = {
 
                     newFaculty.save((err, facultyData) => {
                         if (err) {
-                            res.json({ error: true, error_msg: 'Something went wrong', err })
+                            {
+                                user.findByIdAndDelete(userSaved._id,(err,del)=>{
+                                    if(err){
+    
+                                        res.json({ error: true, error_msg: 'Something went wrong', err })
+                                    }else{
+                                        res.json({
+                                            error:true,error_msg:'Something went wrong',delete:'user deleted',del
+                                        })
+                                    }
+                                })
+                            }
                         }
                         else {
                             res.json({ error: false, msg: 'faculty added', user: userSaved, faculty: facultyData })
