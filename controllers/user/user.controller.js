@@ -120,7 +120,7 @@ module.exports = {
                         else {
                             console.log('5',studentData);
                             
-                            res.status(200).json({ error: false, msg: 'Profile updated', student: studentData })
+                            res.status(200).json({ error: false, msg: 'Profile updated',role:'student' ,student: studentData })
                         }
                     })
                 }
@@ -146,7 +146,7 @@ module.exports = {
                         else {
                             console.log('7',facultyData);
                             
-                            res.status(200).json({ error: false, msg: 'Profile updated', faculty: facultyData })
+                            res.status(200).json({ error: false, msg: 'Profile updated',role:'faculty', faculty: facultyData })
                         }
                     })
                 }
