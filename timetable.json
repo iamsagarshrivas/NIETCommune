@@ -1,28 +1,200 @@
+[
+    {
+        "faculty_id": "",
+        "department": "CS",
+        "facultyCode":"SJN",
+        "timetable":[
+            {
+                "day": "monday",
+                "slot": [
+                    {
+                        "time": "9:00-10:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "A"
+                    },
+                    {
+                        "time": "3:00-4:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "D"
+                    }
+                ]
+            },
+            {
+                "day": "tuesday",
+                "slot": [
+                    {
+                        "time": "10:00-11:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "D"
+                    },
+                    {
+                        "time": "12:00-1:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "A"
+                    },
+                    {
+                        "time": "3:00-5:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN LAB"
+                        },
+                        "semester": "6",
+                        "section": "A"
+                    }
+                ]
+            },
+            {
+                "day": "wednesday",
+                "slot": [
+                    {
+                        "time": "9:00-10:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "D"
+                    },
+                    {
+                        "time": "11:00-1:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN LAB"
+                        },
+                        "semester": "6",
+                        "section": "B"
+                    },
+                    {
+                        "time": "4:00-5:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "A"
+                    }
+                ]
+            },
+            {
+    
+                "day": "thursday",
+                "slot": [
+                    {
+                        "time": "9:00-10:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "A"
+                    },
+                    {
+                        "time": "2:00-3:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "D"
+                    },
+                    {
+                        "time": "3:00-5:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN LAB"
+                        },
+                        "semester": "6",
+                        "section": "C"
+                    }
+                ]
+            },
+            {
+    
+                "day": "friday",
+                "slot": [
+                    {
+                        "time": "9:00-11:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN LAB"
+                        },
+                        "semester": "6",
+                        "section": "D"
+                    },
+                    {
+                        "time": "12:00-1:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN"
+                        },
+                        "semester": "6",
+                        "section": "D"
+                    },
+                    {
+                        "time": "3:00-4:00",
+                        "subject": {
+                            "sub_id": null,
+                            "sub_name": "CN LAB"
+                        },
+                        "semester": "6",
+                        "section": "A"
+                    }
+                ]
+            }
+        ]
+    },
+    
 {
+
     "faculty_id": "",
-    "department": "CS",
-    "facultyCode":"SJN",
+    "department": "CSE",
+    "facultyCode":"DG",
     "timetable":[
         {
             "day": "monday",
             "slot": [
                 {
-                    "time": "9:00-10:00",
+                    "time": "10:00-11:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
-                    "section": "A"
+                    "semester": "4",
+                    "section": "B"
                 },
                 {
-                    "time": "3:00-4:00",
+                    "time": "12:00-1:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
-                    "section": "D"
+                    "semester": "4",
+                    "section": "C"
+                },
+                {
+                    "time": "3:00-5:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "OS LAB"
+                    },
+                    "semester": "4",
+                    "section": "A"
                 }
             ]
         },
@@ -30,31 +202,31 @@
             "day": "tuesday",
             "slot": [
                 {
-                    "time": "10:00-11:00",
+                    "time": "9:00-10:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
-                    "section": "D"
+                    "semester": "4",
+                    "section": "B"
                 },
                 {
-                    "time": "12:00-1:00",
+                    "time": "11:00-12:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
-                    "section": "A"
+                    "semester": "4",
+                    "section": "C"
                 },
                 {
                     "time": "3:00-5:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN LAB"
+                        "sub_name": "OS LAB"
                     },
-                    "semester": "6",
-                    "section": "A"
+                    "semester": "4",
+                    "section": "D"
                 }
             ]
         },
@@ -62,31 +234,31 @@
             "day": "wednesday",
             "slot": [
                 {
-                    "time": "9:00-10:00",
+                    "time": "9:00-11:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN"
+                        "sub_name": "OS LAB"
                     },
-                    "semester": "6",
-                    "section": "D"
+                    "semester": "4",
+                    "section": "B"
                 },
                 {
-                    "time": "11:00-1:00",
+                    "time": "2:00-3:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN LAB"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
+                    "semester": "4",
                     "section": "B"
                 },
                 {
                     "time": "4:00-5:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
-                    "section": "A"
+                    "semester": "4",
+                    "section": "C"
                 }
             ]
         },
@@ -95,31 +267,22 @@
             "day": "thursday",
             "slot": [
                 {
-                    "time": "9:00-10:00",
+                    "time": "12:00-1:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
-                    "section": "A"
-                },
-                {
-                    "time": "2:00-3:00",
-                    "subject": {
-                        "sub_id": null,
-                        "sub_name": "CN"
-                    },
-                    "semester": "6",
-                    "section": "D"
-                },
-                {
-                    "time": "3:00-5:00",
-                    "subject": {
-                        "sub_id": null,
-                        "sub_name": "CN LAB"
-                    },
-                    "semester": "6",
+                    "semester": "4",
                     "section": "C"
+                },
+                {
+                    "time": "3:00-4:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "OS"
+                    },
+                    "semester": "4",
+                    "section": "B"
                 }
             ]
         },
@@ -128,33 +291,35 @@
             "day": "friday",
             "slot": [
                 {
-                    "time": "9:00-11:00",
+                    "time": "9:00-10:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN LAB"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
-                    "section": "D"
+                    "semester": "4",
+                    "section": "B"
                 },
                 {
-                    "time": "12:00-1:00",
+                    "time": "11:00-12:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN"
+                        "sub_name": "OS"
                     },
-                    "semester": "6",
-                    "section": "D"
+                    "semester": "4",
+                    "section": "C"
                 },
                 {
-                    "time": "3:00-4:00",
+                    "time": "3:00-5:00",
                     "subject": {
                         "sub_id": null,
-                        "sub_name": "CN LAB"
+                        "sub_name": "OS LAB"
                     },
-                    "semester": "6",
-                    "section": "A"
+                    "semester": "4",
+                    "section": "C"
                 }
             ]
         }
     ]
+
 }
+]
