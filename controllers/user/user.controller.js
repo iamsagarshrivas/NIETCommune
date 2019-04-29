@@ -29,7 +29,7 @@ module.exports = {
                                     res.status(409).json({ error: true, error_msg: 'something went wrong', err })
 
                                 } else {
-                                    res.status(200).json({ error: false, msg: 'Login Success', student: studentFound });
+                                    res.status(200).json({ error: false, msg: 'Login Success',role:'student', student: studentFound });
                                 }
                             })
                         }
@@ -39,7 +39,7 @@ module.exports = {
                                     res.status(409).json({ error: true, error_msg: 'something went wrong', err })
 
                                 } else {
-                                    res.status(200).json({ error: false, msg: 'Login Success', faculty: facultyFound });
+                                    res.status(200).json({ error: false, msg: 'Login Success',role:'faculty', faculty: facultyFound });
                                 }
                             })
                         }
@@ -65,10 +65,10 @@ module.exports = {
         newUser.save((err, userSaved) => {
             if (err) {
                 if (err.name == 'MongoError' && err.code == 11000) {
-                    res.status(500).json({ error: true, error_msg: 'Email or ERP already exists', err })
+                    res.status(200).json({ error: true, error_msg: 'Email or ERP already exists', err })
                 }
                 else {
-                    res.status(500).json({ error: true, error_msg: 'something went wrong', err })
+                    res.status(200).json({ error: true, error_msg: 'something went wrong', err })
                 }
             }
             else {
