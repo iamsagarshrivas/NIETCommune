@@ -86,7 +86,7 @@ module.exports = {
             if (err) {
                 console.log('2',err);
                 
-                user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
+                // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                 res.json({ error: true, error_msg: 'Something went wrong', err })
             }
             else {
@@ -114,7 +114,7 @@ module.exports = {
                         if (err) {
                             console.log('4',err);
                             
-                            user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
+                            // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                             res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
                         else {
@@ -140,7 +140,7 @@ module.exports = {
                         if (err) {
                             console.log('6',err);
                             
-                            user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
+                            // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                             res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
                         else {

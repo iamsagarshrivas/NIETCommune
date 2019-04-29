@@ -321,5 +321,177 @@
         }
     ]
 
+},
+{
+
+    "faculty_id": "",
+    "department": "CSE",
+    "facultyCode":"AYG",
+    "timetable":[
+        {
+            "day": "monday",
+            "slot": [
+                {
+                    "time": "10:00-11:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "D"
+                },
+                {
+                    "time": "12:00-1:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "C"
+                },
+                {
+                    "time": "3:00-4:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "AT"
+                    },
+                    "semester": "6",
+                    "section": "A"
+                },
+                {
+                    "time": "4:00-5:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "AT"
+                    },
+                    "semester": "6",
+                    "section": "C"
+                }
+                
+            ]
+        },
+        {
+            "day": "tuesday",
+            "slot": [
+                {
+                    "time": "3:00-4:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "C"
+                },
+                {
+                    "time": "4:00-5:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "D"
+                }
+            ]
+        },
+        {
+            "day": "wednesday",
+            "slot": [
+                {
+                    "time": "9:00-10:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "D"
+                },
+                {
+                    "time": "2:00-3:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "C"
+                },
+                {
+                    "time": "3:00-5:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "SE LAB"
+                    },
+                    "semester": "4",
+                    "section": "A"
+                }
+            ]
+        },
+        {
+
+            "day": "thursday",
+            "slot": [
+                {
+                    "time": "9:00-12:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "PROJECT LAB"
+                    },
+                    "semester": "8",
+                    "section": "A"
+                },
+                {
+                    "time": "3:00-4:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "C"
+                },
+                {
+                    "time": "4:00-5:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "D"
+                }
+            ]
+        },
+        {
+
+            "day": "friday",
+            "slot": [
+                {
+                    "time": "9:00-10:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "D"
+                },
+                {
+                    "time": "10:00-11:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "DC"
+                    },
+                    "semester": "8",
+                    "section": "C"
+                },
+                {
+                    "time": "2:00-5:00",
+                    "subject": {
+                        "sub_id": null,
+                        "sub_name": "PROJECT LAB"
+                    },
+                    "semester": "8",
+                    "section": "D"
+                }
+            ]
+        }
+    ]
+
 }
 ]
