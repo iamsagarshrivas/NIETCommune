@@ -8,7 +8,7 @@ var studentSchema = mongoose.Schema({
         type:String,
         lowercase:true
     },
-    branch:{
+    department:{
         type:String,
         lowercase:true
     },
