@@ -44,7 +44,7 @@ module.exports = {
                             })
                         }
                         else if(userFound.role == null){
-                            res.status(200).json({error : false, msg : 'Login Success',user:userFound,})
+                            res.status(200).json({error : false, msg : 'Login Success',role:null,user:userFound,})
                         }
                     }
                 }
