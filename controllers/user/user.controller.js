@@ -29,7 +29,7 @@ module.exports = {
                                     res.status(409).json({ error: true, error_msg: 'something went wrong', err })
 
                                 } else {
-                                    res.status(200).json({ error: false, msg: 'Login Success', role: 'student', user:{
+                                    res.status(200).json({ error: false, msg: 'Login Success', user:{
                                     
                                             _id: studentFound.user_id,
                                             email: studentFound.email,
@@ -59,7 +59,7 @@ module.exports = {
 
                                 } else {
                                     res.status(200).json({
-                                        error: false, msg: 'Login Success', role: 'faculty', user: {
+                                        error: false, msg: 'Login Success', user: {
                                             _id: facultyFound.user_id,
                                             email: facultyFound.email,
                                             name: facultyFound.name,
@@ -77,7 +77,7 @@ module.exports = {
                             })
                         }
                         else if (userFound.role == null) {
-                            res.status(200).json({ error: false, msg: 'Login Success', role: null, user: userFound, })
+                            res.status(200).json({ error: false, msg: 'Login Success', user: userFound, })
                         }
                     }
                 }
