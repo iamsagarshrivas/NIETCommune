@@ -29,8 +29,9 @@ module.exports = {
                                     res.status(409).json({ error: true, error_msg: 'something went wrong', err })
 
                                 } else {
-                                    res.status(200).json({ error: false, msg: 'Login Success', user:{
-                                    
+                                    res.status(200).json({
+                                        error: false, msg: 'Login Success', user: {
+
                                             _id: studentFound.user_id,
                                             email: studentFound.email,
                                             name: studentFound.name,
@@ -41,14 +42,15 @@ module.exports = {
                                             lastLoginTime: userFound.lastLoginTime,
                                             isActive: userFound.isActive,
                                             status: userFound.status,
-                                            course:studentFound.course,
+                                            course: studentFound.course,
                                             department: studentFound.department,
-                                            year:studentFound.year,
-                                            semester:studentFound.semester,
-                                            section:studentFound.section,
-                                            rollNumber:studentFound.rollNumber
-                                        
-                                    } });
+                                            year: studentFound.year,
+                                            semester: studentFound.semester,
+                                            section: studentFound.section,
+                                            rollNumber: studentFound.rollNumber
+
+                                        }
+                                    });
                                 }
                             })
                         }
@@ -122,7 +124,7 @@ module.exports = {
             if (err) {
                 console.log('2', err);
 
-                // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
+                user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                 res.json({ error: true, error_msg: 'Something went wrong', err })
             }
             else {
@@ -163,13 +165,34 @@ module.exports = {
                         if (err) {
                             console.log('4', err);
 
-                            // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
+                            user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                             res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
                         else {
                             console.log('5', studentData);
 
-                            res.status(200).json({ error: false, msg: 'Profile updated', role: 'student', student: studentData })
+                            res.status(200).json({
+                                error: false, msg: 'Profile updated', user: {
+
+                                    _id: studentData.user_id,
+                                    email: studentData.email,
+                                    name: studentData.name,
+                                    role: 'student',
+                                    mobileNumber: studentData.mobileNumber,
+                                    password: userUpdated.password,
+                                    erpId: userUpdated.erpId,
+                                    lastLoginTime: userUpdated.lastLoginTime,
+                                    isActive: userUpdated.isActive,
+                                    status: userUpdated.status,
+                                    course: studentFound.course,
+                                    department: studentData.department,
+                                    year: studentData.year,
+                                    semester: studentData.semester,
+                                    section: studentData.section,
+                                    rollNumber: studentData.rollNumber
+
+                                }
+                            })
                         }
                     })
                 }
@@ -189,13 +212,29 @@ module.exports = {
                         if (err) {
                             console.log('6', err);
 
-                            // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
+                            user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                             res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
                         else {
                             console.log('7', facultyData);
 
-                            res.status(200).json({ error: false, msg: 'Profile updated', role: 'faculty', faculty: facultyData })
+                            res.status(200).json({
+                                error: false, msg: 'Profile updated', user: {
+
+                                    _id: facultyData.user_id,
+                                    email: facultyData.email,
+                                    name: facultyData.name,
+                                    role: 'faculty',
+                                    mobileNumber: facultyData.mobileNumber,
+                                    password: userUpdated.password,
+                                    erpId: userUpdated.erpId,
+                                    lastLoginTime: userUpdated.lastLoginTime,
+                                    isActive: userUpdated.isActive,
+                                    status: userUpdated.status,
+                                    department: facultyData.department
+
+                                }
+                            })
                         }
                     })
                 }
