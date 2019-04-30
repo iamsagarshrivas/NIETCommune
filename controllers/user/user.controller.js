@@ -4,9 +4,9 @@ var faculty = require('../../models/faculty');
 
 module.exports = {
     getAllUser: (req, res) => {
-        user.find({},(err,userIdArr)=>{
-            if(err) throw err;
-            res.json({ar:userIdArr});
+        user.find({}, (err, userIdArr) => {
+            if (err) throw err;
+            res.json({ ar: userIdArr });
         })
     },
     getAnotherUser: (req, res) => {
@@ -29,7 +29,26 @@ module.exports = {
                                     res.status(409).json({ error: true, error_msg: 'something went wrong', err })
 
                                 } else {
-                                    res.status(200).json({ error: false, msg: 'Login Success',role:'student', student: studentFound });
+                                    res.status(200).json({ error: false, msg: 'Login Success', role: 'student', user:{
+                                    
+                                            _id: studentFound.user_id,
+                                            email: studentFound.email,
+                                            name: studentFound.name,
+                                            role: 'student',
+                                            mobileNumber: studentFound.mobileNumber,
+                                            password: userFound.password,
+                                            erpId: userFound.erpId,
+                                            lastLoginTime: userFound.lastLoginTime,
+                                            isActive: userFound.isActive,
+                                            status: userFound.status,
+                                            course:studentFound.course,
+                                            department: studentFound.department,
+                                            year:studentFound.year,
+                                            semester:studentFound.semester,
+                                            section:studentFound.section,
+                                            rollNumber:studentFound.rollNumber
+                                        
+                                    } });
                                 }
                             })
                         }
@@ -39,12 +58,26 @@ module.exports = {
                                     res.status(409).json({ error: true, error_msg: 'something went wrong', err })
 
                                 } else {
-                                    res.status(200).json({ error: false, msg: 'Login Success',role:'faculty', faculty: facultyFound });
+                                    res.status(200).json({
+                                        error: false, msg: 'Login Success', role: 'faculty', user: {
+                                            _id: facultyFound.user_id,
+                                            email: facultyFound.email,
+                                            name: facultyFound.name,
+                                            role: 'faculty',
+                                            mobileNumber: facultyFound.mobileNumber,
+                                            password: userFound.password,
+                                            erpId: userFound.erpId,
+                                            lastLoginTime: userFound.lastLoginTime,
+                                            isActive: userFound.isActive,
+                                            status: userFound.status,
+                                            department: facultyFound.department
+                                        }
+                                    });
                                 }
                             })
                         }
-                        else if(userFound.role == null){
-                            res.status(200).json({error : false, msg : 'Login Success',role:null,user:userFound,})
+                        else if (userFound.role == null) {
+                            res.status(200).json({ error: false, msg: 'Login Success', role: null, user: userFound, })
                         }
                     }
                 }
@@ -75,39 +108,39 @@ module.exports = {
                 }
             }
             else {
-                res.status(200).json({ error: false, msg:'Profile created' ,user: userSaved })
+                res.status(200).json({ error: false, msg: 'Profile created', user: userSaved })
             }
         })
     },
 
     updateUser: (req, res) => {
 
-        console.log('1',req.body);
-        
+        console.log('1', req.body);
 
-        user.findByIdAndUpdate({_id:req.body._id}, { role: req.body.role, status: 'active' }, (err, userUpdated) => {
+
+        user.findByIdAndUpdate({ _id: req.body._id }, { role: req.body.role, status: 'active' }, (err, userUpdated) => {
             if (err) {
-                console.log('2',err);
-                
+                console.log('2', err);
+
                 // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                 res.json({ error: true, error_msg: 'Something went wrong', err })
             }
             else {
-                console.log('3',userUpdated);
-                
+                console.log('3', userUpdated);
+
 
                 if (userUpdated.role == 'student') {
                     let tempYear;
-                    if(req.body.year == 'first' || req.body.year == 'First' ){
-                        tempYear =1;
+                    if (req.body.year == 'first' || req.body.year == 'First') {
+                        tempYear = 1;
                     }
-                    else if(req.body.year == 'second' || req.body.year == 'Second' ){
-                        tempYear =2;
+                    else if (req.body.year == 'second' || req.body.year == 'Second') {
+                        tempYear = 2;
                     }
-                    else if(req.body.year == 'third' || req.body.year == 'Third' ){
-                        tempYear =3;
+                    else if (req.body.year == 'third' || req.body.year == 'Third') {
+                        tempYear = 3;
                     }
-                    else if(req.body.year == 'forth' || req.body.year == 'Forth' ){
+                    else if (req.body.year == 'forth' || req.body.year == 'Forth') {
                         tempYear = 4;
                     }
                     let newStudent = new student({
@@ -128,15 +161,15 @@ module.exports = {
 
                     newStudent.save((err, studentData) => {
                         if (err) {
-                            console.log('4',err);
-                            
+                            console.log('4', err);
+
                             // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                             res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
                         else {
-                            console.log('5',studentData);
-                            
-                            res.status(200).json({ error: false, msg: 'Profile updated',role:'student' ,student: studentData })
+                            console.log('5', studentData);
+
+                            res.status(200).json({ error: false, msg: 'Profile updated', role: 'student', student: studentData })
                         }
                     })
                 }
@@ -152,17 +185,17 @@ module.exports = {
 
                     })
 
-                    newFaculty.save((err,facultyData)=>{
+                    newFaculty.save((err, facultyData) => {
                         if (err) {
-                            console.log('6',err);
-                            
+                            console.log('6', err);
+
                             // user.findByIdAndUpdate(req.body._id, { role: null, status: 'inactive' });
                             res.json({ error: true, error_msg: 'Something went wrong', err })
                         }
                         else {
-                            console.log('7',facultyData);
-                            
-                            res.status(200).json({ error: false, msg: 'Profile updated',role:'faculty', faculty: facultyData })
+                            console.log('7', facultyData);
+
+                            res.status(200).json({ error: false, msg: 'Profile updated', role: 'faculty', faculty: facultyData })
                         }
                     })
                 }
