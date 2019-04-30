@@ -43,6 +43,9 @@ module.exports = {
                                 }
                             })
                         }
+                        else if(userFound.role == null){
+                            res.status(200).json({error : false, msg : 'Login Success',user:userFound,})
+                        }
                     }
                 }
             }

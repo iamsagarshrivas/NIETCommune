@@ -493,5 +493,467 @@
         }
     ]
 
+},
+{
+    "course":"btech",
+    "department":"CSE",
+    "year":"2",
+    "semester":"4",
+    "section":"D",
+    "timetable":[
+        {
+            "day":"monday",
+            "slot":[
+                {
+                    "time":"9:00-10:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"SOFTWARE ENGINEERING",
+                        "sub_code":"RCS 402"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"SURYA PRAKASH SHARMA"
+                    }
+                },
+                {
+                    "time":"10:00-11:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"OPERATING SYSTEM",
+                        "sub_code":"RCS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"DR C.S. YADAV"
+                    }
+                },
+                {
+                    "time":"11:00-1:00",
+                    "logged_hours":2,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"PYTHON LAB",
+                        "sub_code":"RCS 454"
+                    },
+                    "faculty":[{
+                        "faculty_id":"",
+                        "faculty_name":"MS SONAM"
+                    },{
+                        "faculty_id":"",
+                        "faculty_name":"DR PREETI"
+                    },{
+                        "faculty_id":"",
+                        "faculty_name":"MR PRADEEP"
+                    }]
+                },
+                {
+                    "time":"2:00-3:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"TAFL",
+                        "sub_code":"RCS 403"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH VARDHAN MISHRA"
+                    }
+                },
+                {
+                    "time":"3:00-4:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MATHEMATICS III",
+                        "sub_code":"RAS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MS SHIVANI AGRAWAL"
+                    }
+                },
+                {
+                    "time":"4:00-5:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"UHVPE",
+                        "sub_code":"RVE 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH AWASTHI"
+                    }
+                }
+            ]
+        },
+        {
+            "day":"tuesday",
+            "slot":[
+                {
+                    "time":"9:00-10:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MICROPROCESSOR",
+                        "sub_code":"REC 405"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR PRADEEP"
+                    }
+                },
+                {
+                    "time":"10:00-11:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"TAFL",
+                        "sub_code":"RCS 403"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH VARDHAN MISHRA"
+                    }
+                },
+                {
+                    "time":"11:00-1:00",
+                    "logged_hours":2,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"OS LAB",
+                        "sub_code":"RCS 451"
+                    },
+                    "faculty":[{
+                        "faculty_id":"",
+                        "faculty_name":"MS MANU"
+                    },{
+                        "faculty_id":"",
+                        "faculty_name":"DR C.S. YADAV"
+                    },{
+                        "faculty_id":"",
+                        "faculty_name":"DR DEEPTI GUPTA"
+                    }]
+                },
+                {
+                    "time":"2:00-3:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MATHEMATICS III",
+                        "sub_code":"RAS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MS SHIVANI AGRAWAL"
+                    }
+                },
+                {
+                    "time":"3:00-4:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"OPERATING SYSTEM",
+                        "sub_code":"RCS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"DR C.S. YADAV"
+                    }
+                },
+                {
+                    "time":"4:00-5:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"SOFTWARE ENGINEERING",
+                        "sub_code":"RCS 402"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"SURYA PRAKASH SHARMA"
+                    }
+                }
+            ]
+        },
+        {
+            "day":"wednesday",
+            "slot":[
+                {
+                    "time":"9:00-10:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"TAFL",
+                        "sub_code":"RCS 403"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH VARDHAN MISHRA"
+                    }
+                },
+                {
+                    "time":"10:00-11:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MATHEMATICS III",
+                        "sub_code":"RAS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MS SHIVANI AGRAWAL"
+                    }
+                },
+                {
+                    "time":"11:00-12:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"UHVPE",
+                        "sub_code":"RVE 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH AWASTHI"
+                    }
+                },
+                {
+                    "time":"12:00-1:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"OPERATING SYSTEM",
+                        "sub_code":"RCE 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"DR C.S. YADAV"
+                    }
+                },
+                {
+                    "time":"2:00-3:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MICROPROCESSOR",
+                        "sub_code":"REC 405"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR PRADEEP"
+                    }
+                },
+                {
+                    "time":"3:00-5:00",
+                    "logged_hours":2,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"TAFL LAB",
+                        "sub_code":"RCS 453"
+                    },
+                    "faculty":[{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH VARDHAN MISHRA"
+                    },{
+                        "faculty_id":"",
+                        "faculty_name":"MR VINEET VERMA"
+                    },{
+                        "faculty_id":"",
+                        "faculty_name":"MS HARSHA GUPTA"
+                    }]
+                }
+            ]
+        },
+        {
+            "day":"thursday",
+            "slot":[
+                {
+                    "time":"9:00-10:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MICROPROCESSOR",
+                        "sub_code":"REC 405"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR PRADEEP"
+                    }
+                },
+                {
+                    "time":"10:00-11:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MATHEMATICS III",
+                        "sub_code":"RAS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MS SHIVANI AGRAWAL"
+                    }
+                },
+                {
+                    "time":"11:00-1:00",
+                    "logged_hours":2,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"SE LAB",
+                        "sub_code":"RCS 452"
+                    },
+                    "faculty":[{
+                        "faculty_id":"",
+                        "faculty_name":"SURYA PRAKASH SHARMA"
+                    },{
+                        "faculty_id":"",
+                        "faculty_name":"MR PANKAJ"
+                    },{
+                        "faculty_id":"",
+                        "faculty_name":"MR VIKASH"
+                    }]
+                },
+                {
+                    "time":"2:00-3:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"SOFTWARE ENGINEERING",
+                        "sub_code":"RCS 402"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"SURYA PRAKASH SHARMA"
+                    }
+                },
+                {
+                    "time":"3:00-4:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"OPERATING SYSTEM",
+                        "sub_code":"RCS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"DR C.S. YADAV"
+                    }
+                },
+                {
+                    "time":"4:00-5:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"TAFL",
+                        "sub_code":"RCS 403"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH VARDHAN MISHRA"
+                    }
+                }
+            ]
+        },
+        {
+            "day":"friday",
+            "slot":[
+                {
+                    "time":"9:00-10:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"SOFTWARE ENGINEERING",
+                        "sub_code":"RCS 402"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"SURYA PRAKASH SHARMA"
+                    }
+                },
+                {
+                    "time":"10:00-11:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"OPERATING SYSTEM",
+                        "sub_code":"RCS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"DR C.S. YADAV"
+                    }
+                },
+                {
+                    "time":"11:00-12:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MICROPROCESSOR",
+                        "sub_code":"REC 405"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR PRADEEP"
+                    }
+                },
+                {
+                    "time":"12:00-1:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"UHVPE",
+                        "sub_code":"RVE 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH AWASTHI"
+                    }
+                },
+                {
+                    "time":"2:00-3:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"MATHEMATICS III",
+                        "sub_code":"RAS 401"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MS SHIVANI AGRAWAL"
+                    }
+                },
+                {
+                    "time":"3:00-4:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"TAFL",
+                        "sub_code":"RCS 403"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MR HARSH VARDHAN MISHRA"
+                    }
+                },
+                {
+                    "time":"4:00-5:00",
+                    "logged_hours":1,
+                    "subject":{
+                        "sub_id":null,
+                        "sub_name":"AT",
+                        "sub_code":"RCS 403"
+                    },
+                    "faculty":{
+                        "faculty_id":"",
+                        "faculty_name":"MS HARSHA GUPTA"
+                    }
+                }
+            ]
+        }
+        
+    ]
 }
 ]
