@@ -97,6 +97,19 @@ module.exports = {
                 
 
                 if (userUpdated.role == 'student') {
+                    let tempYear;
+                    if(req.body.year == 'first' || req.body.year == 'First' ){
+                        tempYear =1;
+                    }
+                    else if(req.body.year == 'second' || req.body.year == 'Second' ){
+                        tempYear =2;
+                    }
+                    else if(req.body.year == 'third' || req.body.year == 'Third' ){
+                        tempYear =3;
+                    }
+                    else if(req.body.year == 'forth' || req.body.year == 'Forth' ){
+                        tempYear = 4;
+                    }
                     let newStudent = new student({
 
                         name: userUpdated.name,
@@ -106,7 +119,7 @@ module.exports = {
                         mobileNumber: userUpdated.mobileNumber,
                         course: req.body.course,
                         department: req.body.department,
-                        year: req.body.year,
+                        year: tempYear,
                         semester: req.body.semester,
                         section: req.body.section,
                         rollNumber: req.body.rollNumber,
