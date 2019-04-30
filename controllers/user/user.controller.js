@@ -184,7 +184,7 @@ module.exports = {
                                     lastLoginTime: userUpdated.lastLoginTime,
                                     isActive: userUpdated.isActive,
                                     status: userUpdated.status,
-                                    course: studentFound.course,
+                                    course: studentData.course,
                                     department: studentData.department,
                                     year: studentData.year,
                                     semester: studentData.semester,
