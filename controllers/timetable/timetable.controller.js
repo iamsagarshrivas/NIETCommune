@@ -5,7 +5,7 @@ const classTimetable = require('../../models/classTimetable');
 module.exports = {
     getClassTimetable: (req, res) => {
         console.log('working', req.params.id);
-        classTimetable.findOne({ course: 'btech',year:4 }, (err, tt) => {
+        classTimetable.findOne({ course: 'btech' }, (err, tt) => {
             if (err) throw err
             res.json({ tt });
         })
@@ -20,7 +20,7 @@ module.exports = {
             else {
                 console.log(tt);
                 
-                let today = new Date('07-may-2019').getDay();
+                let today = new Date().getDay();
 
                 if(today == 0 || today == 6){
 
