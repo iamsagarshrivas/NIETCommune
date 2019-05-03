@@ -5,19 +5,7 @@ const classTimetable = require('../../models/classTimetable');
 module.exports = {
     getClassTimetable: (req, res) => {
         console.log('working', req.params.id);
-        // student.findOne({user_id:req.params.id},(err,studentFound)=>{
-        //     if(err){
-        //         res.status(404).json({error:true,error_msg:'Something went wrong',err})
-        //     }
-        //     else{
-        //         classTimetable.findOne({course:studentFound.course,branch:studentFound.branch,year:studentFound.year,semester:studentFound.semester})
-        //     }
-
-
-        // })
-
-
-        classTimetable.find({ course: 'btech' }, (err, tt) => {
+        classTimetable.findOne({ course: 'btech',year:4 }, (err, tt) => {
             if (err) throw err
             res.json({ tt });
         })
