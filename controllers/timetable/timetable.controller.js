@@ -7,7 +7,7 @@ module.exports = {
         console.log('working', req.params.id);
         classTimetable.findOne({ course: 'btech' }, (err, tt) => {
             if (err) throw err
-            res.json({error:false,timetable:tt,time : new Date().toISOString() });
+            res.json({error:false,timetable:tt,time : new Date().toLocaleDateString() });
         })
 
     },
