@@ -4,7 +4,7 @@ var facultySchema = mongoose.Schema({
 
     name:String,
     email:String,
-    department:String,
+    department:{type:String,lowercase:true},
     subjects:[mongoose.Schema.Types.ObjectId],
     erpId:{
         type:String,

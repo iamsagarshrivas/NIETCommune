@@ -4,6 +4,7 @@ var studentSchema = mongoose.Schema({
 
     name:String,
     email:String,
+    class:mongoose.Schema.Types.ObjectId,
     course:{
         type:String,
         lowercase:true
