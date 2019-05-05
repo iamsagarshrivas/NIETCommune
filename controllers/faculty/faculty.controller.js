@@ -49,7 +49,7 @@ module.exports = {
 
     },
     getMyNotices : (req, res) => {
-        notice.find({ author: req.params.id }, (err, noticeList) => {
+        notice.find({ author: req.params.id }).sort({_id:-1}).exec((err, noticeList) => {
             if (err) {
                 res.json({ error: true, error_msg: 'something went wrong', err })
             }
