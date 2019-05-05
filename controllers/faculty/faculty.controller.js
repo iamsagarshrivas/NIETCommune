@@ -3,8 +3,7 @@ const notice = require('../../models/notice');
 const claas = require('../../models/class');
 
 module.exports = {
-    generateNotice: (req, res) => {
-        
+    generateNotice : (req, res) => {        
         faculty.findOne({user_id:req.body._id}, (err, facultyFound) => {
             if (err) {
                 res.json({ error: true, error_msg: 'something went wrong', err })
@@ -19,7 +18,7 @@ module.exports = {
                             title: req.body.title,
                             body: req.body.body,
                             author: req.body._id,
-                            generationTime: new Date(Date.now()).toLocaleString(),
+                            generationTime: new Date(Date.now()+330*60*1000).toLocaleString(),
                             class_id: classesFound
                         })
 
@@ -29,7 +28,7 @@ module.exports = {
                                 res.json({ error: true, error_msg: 'something went wrong', err })
                             }
                             else {
-                                res.json({ error: false, notice: noticeSaved })
+                                res.json({ error: false,msg:"Notice saved", notice: noticeSaved })
                             }
                         })
                     }
@@ -38,7 +37,7 @@ module.exports = {
         })
 
     },
-    getNoticeDetails:(req,res)=>{
+    getNoticeDetails : (req,res)=>{
         notice.findById(req.params.id,(err,noticeFound)=>{
             if(err){
                 res.json({error:true,error_msg:"Something went wrong",err})
@@ -49,7 +48,7 @@ module.exports = {
         })
 
     },
-    getMyNotices: (req, res) => {
+    getMyNotices : (req, res) => {
         notice.find({ author: req.params.id }, { title: 1, _id: 1 }, (err, noticeList) => {
             if (err) {
                 res.json({ error: true, error_msg: 'something went wrong', err })
