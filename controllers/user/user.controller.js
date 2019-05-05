@@ -133,7 +133,6 @@ module.exports = {
             else {
                 if (userUpdated.role == 'student') {
                     claas.findOne({
-                        course: req.body.course,
                         department: req.body.department,
                         semester: req.body.semester,
                         section: req.body.section
